@@ -587,16 +587,14 @@ const fillInCard = (selectorSpan, selectorInput)=>{
     });
 };
 // Функция маски ввода банковской карты
-const formatCart = (input)=>{
-    let inputVal = input.value;
-    if (inputVal === "") return;
-    const originalLen = inputVal.length;
-    let caretPos = input.selectionStart;
-    inputVal = inputVal.replace(/\D/g, "").replace(/\B(?=(\d{4})+(?!\d))/g, " ");
-    input.value = inputVal;
-    const updatedLen = inputVal.length;
-    caretPos = updatedLen - originalLen + caretPos;
-    input.setSelectionRange(caretPos, caretPos);
+const cardValidate = (input)=>{
+    const regExp = /[0-9]/g;
+    const isValidArr = input.value.match(regExp);
+    let validInput = "";
+    isValidArr.forEach((item)=>{
+        validInput += item;
+    });
+    input.value = validInput;
 };
 // Создаем карту и форму
 const createCard = ()=>{
@@ -658,7 +656,7 @@ const createCard = ()=>{
         maxlength: 19,
         placeholder: "XXXX XXXX XXXX XXXX"
     });
-    inputFormNumber.addEventListener("input", (e)=>formatCart(e.target));
+    inputFormNumber.addEventListener("input", (e)=>cardValidate(e.target));
     const formInputWrapDate = (0, _redom.el)("div", {
         className: "form__input-wrap form__input-wrap_date"
     });
