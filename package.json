@@ -1,0 +1,8 @@
+{
+  "name": "credit_card-1lvl",
+  "scripts": {},
+  "author": "Dmitriy Khlopov",
+  "dependencies": {
+    "redom": "^3.29.1"
+  }
+}
