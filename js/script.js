@@ -1,5 +1,4 @@
 import {el, setChildren} from 'redom';
-import iMask from '../node_modules/imask'
 
 // Создаем обертку
 const createWrapper = () => el('div', {className: 'wrapper'});
@@ -62,9 +61,10 @@ const createCard = () => {
       {className: 'form__label form__number-label', for: ''},
   );
   const inputFormNumber = el('input',
-      {className: 'input input__number', id: 'cardNumber'},
+      {className: 'input input__number', id:
+      'cardNumber', maxlength: 19, placeholder:
+      'XXXX XXXX XXXX XXXX'},
   );
-
   inputFormNumber.addEventListener('input', (e) => formatCart(e.target));
 
   const formInputWrapDate =

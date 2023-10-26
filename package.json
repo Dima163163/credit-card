@@ -3,6 +3,7 @@
   "scripts": {},
   "author": "Dmitriy Khlopov",
   "dependencies": {
+    "jquery": "^3.7.1",
     "redom": "^3.29.1"
   }
 }
