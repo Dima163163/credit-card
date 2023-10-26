@@ -15,8 +15,11 @@ const cardValidate = (input) => {
   const regExp = /[0-9]/g;
   const isValidArr = input.value.match(regExp);
   let validInput = '';
-  isValidArr.forEach((item) => {
+  isValidArr.forEach((item, i) => {
     validInput += item;
+    if ((i + 1) % 4 === 0 && i !== 0 && i + 1 !== 16) {
+      validInput += ' ';
+    }
   });
   input.value = validInput;
 };
