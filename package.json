@@ -1,9 +1,14 @@
 {
   "name": "credit_card-1lvl",
-  "scripts": {},
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
   "author": "Dmitriy Khlopov",
   "dependencies": {
-    "jquery": "^3.7.1",
     "redom": "^3.29.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.1"
   }
 }
