@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "extends": ["eslint:recommended"],
   "parserOptions": {
@@ -189,20 +190,20 @@
     "func-call-spacing": "error",
     "indent": [
       "error",
-      2,
+      4,
       {
         "CallExpression": {
-          "arguments": 2
+          "arguments": 1
         },
         "FunctionDeclaration": {
           "body": 1,
-          "parameters": 2
+          "parameters": 1
         },
         "FunctionExpression": {
           "body": 1,
-          "parameters": 2
+          "parameters": 1
         },
-        "MemberExpression": 2,
+        "MemberExpression": 1,
         "ObjectExpression": 1,
         "SwitchCase": 1,
         "ignoredNodes": [
@@ -218,7 +219,10 @@
         "code": 80,
         "tabWidth": 2,
         "ignoreUrls": true,
-        "ignorePattern": "goog.(module|require)"
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignorePattern": "d=\"([\\s\\S]*?)\""
+        // "ignorePattern": "goog.(module|require)"
       }
     ],
     "new-cap": "error",
