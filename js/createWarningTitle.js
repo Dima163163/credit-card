@@ -1,5 +1,6 @@
 import {el, mount, unmount} from '../node_modules/redom/dist/redom.es.js';
 
+// Создаем предупреждающую надпись о валидности
 export const createWarningTitle = (elem) => {
   const warningTitle = el('h2',
       {className: 'js-validate-error-label'}, 'Данные не валидны');
